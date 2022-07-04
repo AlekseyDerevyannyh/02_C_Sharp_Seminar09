@@ -13,5 +13,9 @@ int n = Convert.ToInt32(ReadLine());
 WriteLine($"M = {m}; N = {n} -> {MultiFromMToN(m, n)}");
 
 int MultiFromMToN (int m, int n) {
+	if (m < 1 || n < 1) {
+		WriteLine("ОШИБКА! m и n должны быть натуральными числами!");
+		return 0;
+	}
 	return n == m ? n : n > m ? n * MultiFromMToN(m, n - 1) : m * MultiFromMToN(m - 1, n);
 }
